@@ -1,0 +1,1278 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="ig.onto.owl"
+         xmlns="ig.onto.owl#">
+
+<owl:Ontology rdf:about="ig.onto.owl"/>
+
+<owl:ObjectProperty rdf:about="#advised">
+  <rdfs:domain rdf:resource="#HealthCareProvider"/>
+  <rdfs:range rdf:resource="#Employee"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 1.1</rdfs:comment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_adviseded">
+  <rdfs:domain rdf:resource="#Employee"/>
+  <rdfs:range rdf:resource="#Self-Quarantine"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 1.1</rdfs:comment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#experience">
+  <rdfs:domain rdf:resource="#Employee"/>
+  <rdfs:range rdf:resource="#SymptomsOfCovid-19"/>
+  <rdfs:range rdf:resource="#ConditionAndAnyOr,SubstantiallySimilar,SpecifiedBySecretaryOfHealthAndHumanServicesInConsultationWithSecretaryOfTreasuryAndSecretaryOfLabor"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 1.11
+From statement: 1.26</rdfs:comment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#seek">
+  <rdfs:domain rdf:resource="#Employee"/>
+  <rdfs:range rdf:resource="#MedicalDiagnosis"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 1.12</rdfs:comment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#care">
+  <rdfs:domain rdf:resource="#Employee"/>
+  <rdfs:range rdf:resource="#IndividualSubjectToFederalQuarantineOrderRelatedToCovid-19"/>
+  <rdfs:range rdf:resource="#IndividualSubjectToFederalIsolationOrderRelatedToCovid-19"/>
+  <rdfs:range rdf:resource="#IndividualSubjectToStateQuarantineOrderRelatedToCovid-19"/>
+  <rdfs:range rdf:resource="#IndividualSubjectToStateIsolationOrderRelatedToCovid-19"/>
+  <rdfs:range rdf:resource="#IndividualSubjectToLocalQuarantineOrderRelatedToCovid-19"/>
+  <rdfs:range rdf:resource="#IndividualSubjectToLocalIsolationOrderRelatedToCovid-19"/>
+  <rdfs:range rdf:resource="#IndividualAdvisedByAHealthCareProviderToSelf-QuarantineDueToConcernsRelatedToCovid-19"/>
+  <rdfs:range rdf:resource="#SonOfEmployee"/>
+  <rdfs:range rdf:resource="#DaughterOfEmployee"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 1.13
+From statement: 1.14
+From statement: 1.15
+From statement: 1.16
+From statement: 1.17
+From statement: 1.18
+From statement: 1.19
+From statement: 1.2
+From statement: 1.21
+From statement: 1.22
+From statement: 1.23
+From statement: 1.24
+From statement: 1.25</rdfs:comment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#exclude">
+  <rdfs:domain rdf:resource="#Employer"/>
+  <rdfs:domain rdf:resource="#SecretaryOfLabor"/>
+  <rdfs:range rdf:resource="#Employee"/>
+  <rdfs:range rdf:resource="#HealthCareProvidersCertain"/>
+  <rdfs:range rdf:resource="#EmergencyRespondersCertain"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 2.3
+From statement: 34.2
+From statement: 34.3</rdfs:comment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is_excluded">
+  <rdfs:domain rdf:resource="#Employee"/>
+  <rdfs:range rdf:resource="#ApplicationOfThisSubsection"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 2.3</rdfs:comment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#search">
+  <rdfs:domain rdf:resource="#Employee"/>
+  <rdfs:range rdf:resource="#EmployeeAndreplacement,ToCoverHoursDuringWhichEmployeeIsUsingPaidSickTime"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 7.2</rdfs:comment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#find">
+  <rdfs:domain rdf:resource="#Employee"/>
+  <rdfs:range rdf:resource="#EmployeeAndreplacement,ToCoverHoursDuringWhichEmployeeIsUsingPaidSickTime"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 7.3</rdfs:comment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#takes">
+  <rdfs:domain rdf:resource="#Employee"/>
+  <rdfs:range rdf:resource="#Leave"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 12.4</rdfs:comment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_filed">
+  <rdfs:domain rdf:resource="#Employee"/>
+  <rdfs:range rdf:resource="#ComplaintAny"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 12.5</rdfs:comment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has">
+  <rdfs:domain rdf:resource="#Employee"/>
+  <rdfs:range rdf:resource="#ProceedingAndAny,UnderThisAct"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 12.6</rdfs:comment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_institute">
+  <rdfs:domain rdf:resource="#Employee"/>
+  <rdfs:range rdf:resource="#ProceedingAndAny,RelatedToThisAct(IncludingAProceedingThatSeeksEnforcementOfThisAct)"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 12.7</rdfs:comment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#has_caused_to_be_instituted">
+  <rdfs:domain rdf:resource="#Employee"/>
+  <rdfs:range rdf:resource="#ProceedingAndAny,UnderThisAct"/>
+  <rdfs:range rdf:resource="#ProceedingAndAny,RelatedToThisAct(IncludingAProceedingThatSeeksEnforcementOfThisAct)"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 12.8
+From statement: 12.9</rdfs:comment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#allow">
+  <rdfs:domain rdf:resource="#SecretaryOfLabor"/>
+  <rdfs:range rdf:resource="#And34.5,34.6"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 34.4</rdfs:comment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#exempts">
+  <rdfs:domain rdf:resource="#SecretaryOfLabor"/>
+  <rdfs:range rdf:resource="#SmallBusinessesWithFewerThan50EmployeesFromRequirementsOfSection5102(A)(5)"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 34.7</rdfs:comment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#carry_out">
+  <rdfs:domain rdf:resource="#SecretaryOfLabor"/>
+  <rdfs:range rdf:resource="#PurposesOfThisAct."/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 34.8</rdfs:comment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#ensure">
+  <rdfs:domain rdf:resource="#SecretaryOfLabor"/>
+  <rdfs:range rdf:resource="#ConsistencyBetweenThisActAndDivisionCAndDivisionGOfFamiliesFirstCoronavirusResponseAct."/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 34.9</rdfs:comment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#shall_provide">
+  <rdfs:domain rdf:resource="#Employer"/>
+  <rdfs:range rdf:resource="#PaidSickTime"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 1.1</rdfs:comment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#shall_be_provided_to">
+  <rdfs:domain rdf:resource="#PaidSickTime"/>
+  <rdfs:range rdf:resource="#EmployeeEmployedByEmployer"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 1.1</rdfs:comment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#may_use">
+  <rdfs:domain rdf:resource="#Employee"/>
+  <rdfs:range rdf:resource="#PaidSickTimeUnderSubsection(A)"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 9.1</rdfs:comment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#may_not_require">
+  <rdfs:domain rdf:resource="#Employer"/>
+  <rdfs:range rdf:resource="#Employee"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 10.1</rdfs:comment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#may_not_be_required_to">
+  <rdfs:domain rdf:resource="#Employee"/>
+  <rdfs:range rdf:resource="#UseOrPaidLeaveProvidedByEmployerToEmployee"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 10.1</rdfs:comment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#shall_keep_posted">
+  <rdfs:domain rdf:resource="#EmployerEach"/>
+  <rdfs:range rdf:resource="#NoticeAndtoBePreparedOrApprovedBySecretaryOfLabor,OfRequirementsDescribedInThisAct"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 11.1</rdfs:comment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#shall_post">
+  <rdfs:domain rdf:resource="#EmployerEach"/>
+  <rdfs:range rdf:resource="#NoticeAndtoBePreparedOrApprovedBySecretaryOfLabor,OfRequirementsDescribedInThisAct"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 11.2</rdfs:comment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#may_fulfill">
+  <rdfs:domain rdf:resource="#EmployerSignatoryToAMultiemployerCollectiveBargainingAgreement"/>
+  <rdfs:range rdf:resource="#ObligationsAnditsunderThisAct}"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 15.1</rdfs:comment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#may_secure">
+  <rdfs:domain rdf:resource="#Employees"/>
+  <rdfs:range rdf:resource="#PayFromSuchFund"/>
+  <rdfs:range rdf:resource="#PayFromSuchPlan"/>
+  <rdfs:range rdf:resource="#PayFromSuchProgram"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 16.1
+From statement: 16.2
+From statement: 16.3</rdfs:comment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#shall_use">
+  <rdfs:domain rdf:resource="#Employer"/>
+  <rdfs:range rdf:resource="#NumberEqualToAverageNumberOfHoursThatEmployeeWasScheduledPerDayOver6-MonthPeriodEndingOnDateOnWhichEmployeeTakesPaidSickTime,IncludingHoursForWhichEmployeeTookLeaveOfAnyType."/>
+  <rdfs:range rdf:resource="#ExpectationAndReasonableofEmployeeAtTimeOfHiringOfAverageNumberOfHoursPerDayThatEmployeeWouldNormallyBeScheduledToWork"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 32.1
+From statement: 31.2</rdfs:comment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#shall_issue">
+  <rdfs:domain rdf:resource="#SecretaryOfLabor"/>
+  <rdfs:range rdf:resource="#Guidelines"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 32.1</rdfs:comment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#may_require">
+  <rdfs:domain rdf:resource="#Employer"/>
+  <rdfs:range rdf:resource="#Employee"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 33.1</rdfs:comment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#may_be_required_to">
+  <rdfs:domain rdf:resource="#Employee"/>
+  <rdfs:range rdf:resource="#ToFollowReasonableNoticeProcedures"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 33.1</rdfs:comment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#shall_be">
+  <rdfs:domain rdf:resource="#Employee"/>
+  <rdfs:range rdf:resource="#EntitledToPaidSickTimeForAnAmountOfHoursDeterminedUnderStatement4"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#shall_be'">
+  <rdfs:domain rdf:resource="#AmountOfHoursOfPaidSickTimeToWhichAFull-TimeEmployeesAreEntitled"/>
+  <rdfs:range rdf:resource="#80Hours"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#shall_be''">
+  <rdfs:domain rdf:resource="#AmountOfHoursOfPaidSickTimeToWhichAPart-TimeEmployeesAreEntitled"/>
+  <rdfs:range rdf:resource="#ANumberOfHoursEqualToNumberOfHoursThatSuchEmployeeWorks,OnAverage,OverA2-WeekPeriod"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#shall_not_carry">
+  <rdfs:domain rdf:resource="#PaidSickTimeUnderThisSection"/>
+  <rdfs:range rdf:resource="#CarryOverFrom1YearToNext"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#shall_be'''">
+  <rdfs:domain rdf:resource="#PaidSickTimeUnderSubsection(A)"/>
+  <rdfs:range rdf:resource="#AvailableForImmediateUseByEmployeeForPurposesDescribedInSuchSubsection"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#shall_be''''">
+  <rdfs:domain rdf:resource="#Discharge"/>
+  <rdfs:range rdf:resource="#Unlawful"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#shall_be'''''">
+  <rdfs:domain rdf:resource="#Discipline"/>
+  <rdfs:range rdf:resource="#Unlawful"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#shall_be''''''">
+  <rdfs:domain rdf:resource="#DiscriminateAgainst"/>
+  <rdfs:range rdf:resource="#Unlawful"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#shall_be'''''''">
+  <rdfs:domain rdf:resource="#EmployerWhoViolatesSection5102"/>
+  <rdfs:range rdf:resource="#ConsideredToHaveFailedToPayMinimumWagesInViolationOfSection6OfFairLaborStandardsActOf1938(29U.S.C.206)."/>
+  <rdfs:range rdf:resource="#SubjectToPenaltiesDescribedInSections16And17OfSuchAct(29U.S.C.216;217)WithRespectToSuchViolation"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#shall_be''''''''">
+  <rdfs:domain rdf:resource="#EmployerWhoWillfullyViolatesSection5104"/>
+  <rdfs:range rdf:resource="#ConsideredToBeInViolationOfSection15(A)(3)OfFairLaborStandardsActOf1938(29U.S.C.215(A)(3))"/>
+  <rdfs:range rdf:resource="#SubjectToPenaltiesDescribedInSections16And17OfSuchAct(29U.S.C.216;217)WithRespectToSuchViolation"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#shall_be'''''''''">
+  <rdfs:domain rdf:resource="#NothingInThisAct"/>
+  <rdfs:range rdf:resource="#ConstruedToInAnyWayDiminishRightsThatAnEmployeeIsEntitledToUnderAnyOrFederalLaw"/>
+  <rdfs:range rdf:resource="#ConstruedToInAnyWayDiminishBenefitsThatAnEmployeeIsEntitledToUnderAnyOrFederalLaw."/>
+  <rdfs:range rdf:resource="#ConstruedToInAnyWayDiminishRightsThatAnEmployeeIsEntitledToUnderAnyOrState"/>
+  <rdfs:range rdf:resource="#ConstruedToInAnyWayDiminishBenefitsThatAnEmployeeIsEntitledToUnderAnyOrState"/>
+  <rdfs:range rdf:resource="#ConstruedToInAnyWayDiminishRightsThatAnEmployeeIsEntitledToUnderAnyLocalLaw"/>
+  <rdfs:range rdf:resource="#ConstruedToInAnyWayDiminishBenefitsThatAnEmployeeIsEntitledToUnderAnyLocalLaw"/>
+  <rdfs:range rdf:resource="#ConstruedToInAnyWayDiminishRightsThatAnEmployeeIsEntitledToUnderAnyCollectiveBargainingAgreement"/>
+  <rdfs:range rdf:resource="#ConstruedToInAnyWayDiminishBenefitsThatAnEmployeeIsEntitledToUnderAnyCollectiveBargainingAgreement"/>
+  <rdfs:range rdf:resource="#ConstruedToInAnyWayDiminishRightsThatAnEmployeeIsEntitledToUnderAnyExistingEmployerPolicy"/>
+  <rdfs:range rdf:resource="#ConstruedToInAnyWayDiminishBenefitsThatAnEmployeeIsEntitledToUnderAnyExistingEmployerPolicy"/>
+  <rdfs:range rdf:resource="#ConstruedToRequireFinancialReimbursementToAnEmployeeFromAnEmployerUponEmployee'STerminationFromEmploymentForPaidSickTimeUnderThisActThatHasNotBeenUsedBySuchEmployee"/>
+  <rdfs:range rdf:resource="#ConstruedToRequireFinancialReimbursementToAnEmployeeFromAnEmployerUponEmployee'SResignationFromEmploymentForPaidSickTimeUnderThisActThatHasNotBeenUsedBySuchEmployee"/>
+  <rdfs:range rdf:resource="#ConstruedToRequireFinancialReimbursementToAnEmployeeFromAnEmployerUponEmployee'SRetirementFromEmploymentForPaidSickTimeUnderThisActThatHasNotBeenUsedBySuchEmployee"/>
+  <rdfs:range rdf:resource="#ConstruedToRequireFinancialReimbursementToAnEmployeeFromAnEmployerUponEmployee'SOrSeparationFromEmploymentForPaidSickTimeUnderThisActThatHasNotBeenUsedBySuchEmployee"/>
+  <rdfs:range rdf:resource="#ConstruedToRequireOrReimbursementToAnEmployeeFromAnEmployerUponEmployee'STerminationFromEmploymentForPaidSickTimeUnderThisActThatHasNotBeenUsedBySuchEmployee"/>
+  <rdfs:range rdf:resource="#ConstruedToRequireOrReimbursementToAnEmployeeFromAnEmployerUponEmployee'ResignationFromEmploymentForPaidSickTimeUnderThisActThatHasNotBeenUsedBySuchEmployee"/>
+  <rdfs:range rdf:resource="#ConstruedToRequireOrReimbursementToAnEmployeeFromAnEmployerUponEmployee'SRetirementFromEmploymentForPaidSickTimeUnderThisActThatHasNotBeenUsedBySuchEmployee"/>
+  <rdfs:range rdf:resource="#ConstruedToRequireOrReimbursementToAnEmployeeFromAnEmployerUponEmployee'SOrSeparationFromEmploymentForPaidSickTimeUnderThisActThatHasNotBeenUsedBySuchEmployee"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#shall_take">
+  <rdfs:domain rdf:resource="#ActThis"/>
+  <rdfs:range rdf:resource="#Effect"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#shall_take'">
+  <rdfs:domain rdf:resource="#RequirementsUnderThisAct"/>
+  <rdfs:range rdf:resource="#Effect"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#mean">
+  <rdfs:domain rdf:resource="#TermsEmployee"/>
+  <rdfs:range rdf:resource="#IndividualOrand20.2,Or20.3,20.4,20.5,20.6,20.7,20.8,29.9,20.10,20.11,20.12"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is">
+  <rdfs:domain rdf:resource="#Individual"/>
+  <rdfs:range rdf:resource="#EmployeeDefinedInSection3(E)OfFairLaborStandardsActOf1938(29U.S.C.203(E))"/>
+  <rdfs:range rdf:resource="#CoveredUnderSubparagraph(E)IncludingSuchAnEmployeeOfLibraryOfCongress"/>
+  <rdfs:range rdf:resource="#CoveredUnderSubparagraph(F)IncludingSuchAnEmployeeOfLibraryOfCongress"/>
+  <rdfs:range rdf:resource="#EmployeeAndaStateDescribedInSection304(A)OfGovernmentEmployeeRightsActOf1991(42U.S.C.2000E-16C(A))"/>
+  <rdfs:range rdf:resource="#EmployeeAndAStateDescribedInSection304(A)OfGovernmentEmployeeRightsActOf1991(42U.S.C.2000E-16C(A))"/>
+  <rdfs:range rdf:resource="#EmployeeCoveredAsDefinedInSection101OfCongressionalAccountabilityActOf1995(2U.S.C.1301),OrThanAnApplicantForEmployment"/>
+  <rdfs:range rdf:resource="#EmployeeCoveredAsDefinedInSection411(C)OfTitle3,UnitedStatesCode"/>
+  <rdfs:range rdf:resource="#FederalOfficerCoveredUnderSubchapterVOfChapter63OfTitle5,UnitedStatesCode"/>
+  <rdfs:range rdf:resource="#EmployeeCoveredUnderSubchapterVOfChapter63OfTitle5,UnitedStatesCode"/>
+  <rdfs:range rdf:resource="#IndividualOrOccupyingAPositionInCivilService(AsThatTermIsDefinedInSection2101(1)OfTitle5,UnitedStatesCode)"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#[is]">
+  <rdfs:domain rdf:resource="#Individual"/>
+  <rdfs:range rdf:resource="#EmployeeOfGovernmentAccountabilityOffice"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#mean'">
+  <rdfs:domain rdf:resource="#TermEmployer"/>
+  <rdfs:range rdf:resource="#Person"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#is'">
+  <rdfs:domain rdf:resource="#Person"/>
+  <rdfs:range rdf:resource="#EmployerAndcoveredAsDefinedInSubparagraphnotCoveredUnderSubclause(V)"/>
+  <rdfs:range rdf:resource="#EntityEmployingAStateEmployeeDescribedInSection304(A)OfGovernmentEmployeeRightsActOf1991"/>
+  <rdfs:range rdf:resource="#OfficeEmployingAsDefinedInSection101OfCongressionalAccountabilityActOf1995"/>
+  <rdfs:range rdf:resource="#OfficeEmployingAsDefinedInSection411(C)OfTitle3,UnitedStatesCode"/>
+  <rdfs:range rdf:resource="#ExecutiveAgencyAndasDefinedInSection105OfTitle5,UnitedStatesCodeincludingU.S.PostalServiceincludingPostalRegulatoryCommission"/>
+  <rdfs:range rdf:resource="#EngagedInCommerce(IncludingGovernment)"/>
+  <rdfs:range rdf:resource="#EngagedAnInIndustry"/>
+  <rdfs:range rdf:resource="#EngagedInActivityAffectingCommerce(IncludingGovernment),AsDefinedInSubparagraph(B)(Iii)"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#mean''">
+  <rdfs:domain rdf:resource="#Term``CoveredEmployer''"/>
+  <rdfs:range rdf:resource="#And22.2,22.3,22.4,22.5,22.6,22.7,22.8,22.9,22.10,22.11,22.12,22.13"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#includes">
+  <rdfs:domain rdf:resource="#Term``CoveredEmployer''"/>
+  <rdfs:range rdf:resource="#SuccessorInInterestOfAnEmployer"/>
+  <rdfs:range rdf:resource="#``PublicAgency''AsDefinedInSection3(X)OfFairLaborStandardsActOf1938(29U.S.C.203(X))"/>
+  <rdfs:range rdf:resource="#GovernmentAccountabilityOffice"/>
+  <rdfs:range rdf:resource="#LibraryOfCongress"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#shall_be''''''''''">
+  <rdfs:domain rdf:resource="#PublicAgency"/>
+  <rdfs:range rdf:resource="#ConsideredToBeAPersonEngagedInCommerce"/>
+  <rdfs:range rdf:resource="#ConsideredToBeAPersonEngagedInAnIndustry"/>
+  <rdfs:range rdf:resource="#ConsideredToBeAPersonEngagedInAnActivityAffectingCommerce"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#mean'''">
+  <rdfs:domain rdf:resource="#Term``Commerce''"/>
+  <rdfs:range rdf:resource="#ActivityInCommerce"/>
+  <rdfs:range rdf:resource="#ActivityInWhichALaborDisputeWouldHinderCommerceOrFreeFlowOfCommerce"/>
+  <rdfs:range rdf:resource="#ActivityInWhichALaborDisputeWouldObstructCommerceOrFreeFlowOfCommerce"/>
+  <rdfs:range rdf:resource="#BusinessAnyinCommerce"/>
+  <rdfs:range rdf:resource="#BusinessInWhichALaborDisputeWouldHinderCommerceOrFreeFlowOfCommerce"/>
+  <rdfs:range rdf:resource="#BusinessInWhichALaborDisputeWouldObstructCommerceOrFreeFlowOfCommerce"/>
+  <rdfs:range rdf:resource="#IndustryInCommerce"/>
+  <rdfs:range rdf:resource="#IndustryInWhichALaborDisputeWouldHinderCommerceOrFreeFlowOfCommerce"/>
+  <rdfs:range rdf:resource="#IndustryInWhichALaborDisputeWouldObstructCommerceOrFreeFlowOfCommerce"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#mean''''">
+  <rdfs:domain rdf:resource="#Term``IndustryOrActivityAffectingCommerce''"/>
+  <rdfs:range rdf:resource="#ActivityInCommerce"/>
+  <rdfs:range rdf:resource="#ActivityInWhichALaborDisputeWouldHinderCommerceOrFreeFlowOfCommerce"/>
+  <rdfs:range rdf:resource="#ActivityInCommerceOrInWhichALaborDisputeWouldObstructCommerceOrFreeFlowOfCommerce"/>
+  <rdfs:range rdf:resource="#BusinessInCommerce"/>
+  <rdfs:range rdf:resource="#BusinessInWhichALaborDisputeWouldHinderCommerceOrFreeFlowOfCommerce"/>
+  <rdfs:range rdf:resource="#BusinessInWhichALaborDisputeWouldObstructCommerceOrFreeFlowOfCommerce"/>
+  <rdfs:range rdf:resource="#IndustryInCommerce"/>
+  <rdfs:range rdf:resource="#IndustryInWhichALaborDisputeWouldHinderCommerceOrFreeFlowOfCommerce"/>
+  <rdfs:range rdf:resource="#IndustryInWhichALaborDisputeWouldObstructCommerceOrFreeFlowOfCommerce"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#include">
+  <rdfs:domain rdf:resource="#Term``Commerce''"/>
+  <rdfs:range rdf:resource="#``Commerce''AsDefinedInParagraphs(1)And(3)OfSection501OfLaborManagementRelationsActOf1947(29U.S.C.142(1)And(3))"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#include'">
+  <rdfs:domain rdf:resource="#Term``IndustryOrActivityAffectingCommerce''"/>
+  <rdfs:range rdf:resource="#``IndustryAffectingCommerce''AsDefinedInParagraphs(1)And(3)OfSection501OfLaborManagementRelationsActOf1947(29U.S.C.142(1)And(3))"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#have">
+  <rdfs:domain rdf:resource="#Term``Employee''"/>
+  <rdfs:range rdf:resource="#MeaningAndSamegivenSuchTermInSection3(E)OfFairLaborStandardsActOf1938(29U.S.C.203(E))"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#have'">
+  <rdfs:domain rdf:resource="#Term``Person''"/>
+  <rdfs:range rdf:resource="#MeaningAndSamegivenSuchTermInSection3(A)OfFairLaborStandardsActOf1938(29U.S.C.203(A))}"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#have''">
+  <rdfs:domain rdf:resource="#Term``Employ''"/>
+  <rdfs:range rdf:resource="#MeaningGivenSuchTermsInSection3OfFairLaborStandardsActOf1938(29U.S.C.203)."/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#have'''">
+  <rdfs:domain rdf:resource="#Term``State''"/>
+  <rdfs:range rdf:resource="#MeaningGivenSuchTermsInSection3OfFairLaborStandardsActOf1938(29U.S.C.203)."/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#have''''">
+  <rdfs:domain rdf:resource="#Term``HealthCareProvider''"/>
+  <rdfs:range rdf:resource="#MeaningGivenSuchTermsInSection101OfFamilyAndMedicalLeaveActOf1993(29U.S.C.2611)"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#have'''''">
+  <rdfs:domain rdf:resource="#Term``SonOrDaughter''"/>
+  <rdfs:range rdf:resource="#MeaningGivenSuchTermsInSection101OfFamilyAndMedicalLeaveActOf1993(29U.S.C.2611)"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#mean'''''">
+  <rdfs:domain rdf:resource="#Term``PaidSickTime''"/>
+  <rdfs:range rdf:resource="#IncrementOfCompensatedLeaveAndprovidedByAnEmployerForUseDuringAnAbsenceFromEmploymentprovidedForAReasonDescribedInAnyParagraphOfSection2(A)IAndcalculatedBasedOnEmployee'SRequiredCompensationUnderSubparagraph(B)AndNumberOfHoursEmployeeWouldOrwiseBeNormallyScheduledToWork(OrNumberOfHoursCalculatedUnderSubparagraph(C))NotExceed$511PerDayForAUseDescribedInParagraph(1),(2),Or(3)OfSection5102(A)NotExceed$5,110InAggregateForAUseDescribedInParagraph(1),(2),Or(3)OfSection5102(A)NotExceed$200PerDayForAUseDescribedInParagraph(4),(5),Or(6)OfSection5102(A)NotExceed$2,000InAggregateForAUseDescribedInParagraph(4),(5),Or(6)OfSection5102(A)"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#shall_be'''''''''''">
+  <rdfs:domain rdf:resource="#Employee'SRequiredCompensationAndsubjectToSubparagraph(A)(Ii)UnderThisSubparagraph"/>
+  <rdfs:range rdf:resource="#NotLessThanGreaterOfEmployee'SRegularRateOfPay(AsDeterminedUnderSection7(E)OfFairLaborStandardsActOf1938(29U.S.C.207(E))."/>
+  <rdfs:range rdf:resource="#NotLessThanGreaterOfMinimumWageRateInEffectUnderSection6(A)(1)OfFairLaborStandardsActOf1938(29U.S.C.206(A)(1))"/>
+  <rdfs:range rdf:resource="#BeNotLessThanMinimumWageRateInEffectForSuchEmployeeInApplicableStateOrLocality,WhicheverIsGreater,InWhichEmployeeIsEmployed"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#shall_be''''''''''''">
+  <rdfs:domain rdf:resource="#Employee'SRequiredCompensationAndsubjectToSubparagraph(A)(Ii),WithRespectToAnyPaidSickTimeProvidedForAnyUseDescribedInParagraph(4),(5),Or(6)OfSection5102(A)UnderThisSubparagraph"/>
+  <rdfs:range rdf:resource="#Two-ThirdsOfAmountDescribedInClause(B)(I)"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#shall_have">
+  <rdfs:domain rdf:resource="#SecretaryOfLabor"/>
+  <rdfs:range rdf:resource="#AuthorityToIssueRegulationsAnd34.2,34.3,34.4,34.7,34.8,34.9"/>
+</owl:ObjectProperty>
+
+<owl:Class rdf:about="#Employee">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#EmployeeThatIsUnableToWork">
+  <rdfs:subClassOf rdf:resource="#Employee"/>
+</owl:Class>
+
+<owl:Class rdf:about="#EmployeeThatIsUnableToTelework">
+  <rdfs:subClassOf rdf:resource="#Employee"/>
+</owl:Class>
+
+<owl:Class rdf:about="#EmployeeThatIsSubjectFederalQuarantineOrderRelatedToCovid-19">
+  <rdfs:subClassOf rdf:resource="#Employee"/>
+</owl:Class>
+
+<owl:Class rdf:about="#EmployeeThatIsSubjectFederalIsolationOrderRelatedToCovid-19">
+  <rdfs:subClassOf rdf:resource="#Employee"/>
+</owl:Class>
+
+<owl:Class rdf:about="#EmployeeThatIsSubjectStateQuarantineOrderRelatedToCovid-19">
+  <rdfs:subClassOf rdf:resource="#Employee"/>
+</owl:Class>
+
+<owl:Class rdf:about="#EmployeeThatIsSubjectStateIsolationOrderRelatedToCovid-19">
+  <rdfs:subClassOf rdf:resource="#Employee"/>
+</owl:Class>
+
+<owl:Class rdf:about="#EmployeeThatIsSubjectLocalQuarantineOrderRelatedToCovid-19">
+  <rdfs:subClassOf rdf:resource="#Employee"/>
+</owl:Class>
+
+<owl:Class rdf:about="#EmployeeThatIsSubjectLocalIsolationOrderRelatedToCovid-19">
+  <rdfs:subClassOf rdf:resource="#Employee"/>
+</owl:Class>
+
+<owl:Class rdf:about="#EmployeeThatIsHealthCareProvider">
+  <rdfs:subClassOf rdf:resource="#Employee"/>
+</owl:Class>
+
+<owl:Class rdf:about="#EmployeeThatIsEmergencyResponder">
+  <rdfs:subClassOf rdf:resource="#Employee"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Person">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#PersonThatEngageInCommerce">
+  <rdfs:subClassOf rdf:resource="#Person"/>
+</owl:Class>
+
+<owl:Class rdf:about="#PersonThatEngageInAnyIndustry">
+  <rdfs:subClassOf rdf:resource="#Person"/>
+</owl:Class>
+
+<owl:Class rdf:about="#PersonThatEngageActivityAffectingCommerce">
+  <rdfs:subClassOf rdf:resource="#Person"/>
+</owl:Class>
+
+<owl:Class rdf:about="#AmountOfHoursOfPaidSickTime">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#AmountOfHoursOfPaidSickTimeToWhichAFull-TimeEmployeesAreEntitled">
+  <rdfs:subClassOf rdf:resource="#AmountOfHoursOfPaidSickTime"/>
+</owl:Class>
+
+<owl:Class rdf:about="#AmountOfHoursOfPaidSickTimeToWhichAPart-TimeEmployeesAreEntitled">
+  <rdfs:subClassOf rdf:resource="#AmountOfHoursOfPaidSickTime"/>
+</owl:Class>
+
+<owl:Class rdf:about="#PaidSickTime">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#PaidSickTimeUnderThisSection">
+  <rdfs:subClassOf rdf:resource="#PaidSickTime"/>
+</owl:Class>
+
+<owl:Class rdf:about="#PaidSickTimeProvidedToAnEmployeeUnderThisAct">
+  <rdfs:subClassOf rdf:resource="#PaidSickTime"/>
+</owl:Class>
+
+<owl:Class rdf:about="#PaidSickTimeUnderSubsection(A)">
+  <rdfs:subClassOf rdf:resource="#PaidSickTime"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Discharge">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Discipline">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#DiscriminateAgainst">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Employer">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#EmployerWhoViolatesSection5102">
+  <rdfs:subClassOf rdf:resource="#Employer"/>
+</owl:Class>
+
+<owl:Class rdf:about="#EmployerWhoWillfullyViolatesSection5104">
+  <rdfs:subClassOf rdf:resource="#Employer"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Nothing">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#NothingInThisAct">
+  <rdfs:subClassOf rdf:resource="#Nothing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Act">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ActThis">
+  <rdfs:subClassOf rdf:resource="#Act"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Requirements">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#RequirementsUnderThisAct">
+  <rdfs:subClassOf rdf:resource="#Requirements"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Terms">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#TermsEmployee">
+  <rdfs:subClassOf rdf:resource="#Terms"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Individual">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Term">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#TermEmployer">
+  <rdfs:subClassOf rdf:resource="#Term"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Term``CoveredEmployer''">
+  <rdfs:subClassOf rdf:resource="#Term"/>
+</owl:Class>
+
+<owl:Class rdf:about="#PublicAgency">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Term``Commerce''">
+  <rdfs:subClassOf rdf:resource="#Term"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Term``IndustryOrActivityAffectingCommerce''">
+  <rdfs:subClassOf rdf:resource="#Term"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Term``Employee''">
+  <rdfs:subClassOf rdf:resource="#Term"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Term``Person''">
+  <rdfs:subClassOf rdf:resource="#Term"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Term``Employ''">
+  <rdfs:subClassOf rdf:resource="#Term"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Term``State''">
+  <rdfs:subClassOf rdf:resource="#Term"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Term``HealthCareProvider''">
+  <rdfs:subClassOf rdf:resource="#Term"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Term``SonOrDaughter''">
+  <rdfs:subClassOf rdf:resource="#Term"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Term``PaidSickTime''">
+  <rdfs:subClassOf rdf:resource="#Term"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Employee'SRequiredCompensation">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Employee'SRequiredCompensationAndsubjectToSubparagraph(A)(Ii)UnderThisSubparagraph">
+  <rdfs:subClassOf rdf:resource="#Employee'SRequiredCompensation"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Employee'SRequiredCompensationAndsubjectToSubparagraph(A)(Ii),WithRespectToAnyPaidSickTimeProvidedForAnyUseDescribedInParagraph(4),(5),Or(6)OfSection5102(A)UnderThisSubparagraph">
+  <rdfs:subClassOf rdf:resource="#Employee'SRequiredCompensation"/>
+</owl:Class>
+
+<owl:Class rdf:about="#SecretaryOfLabor">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#EntitledToPaidSickTimeForAnAmountOfHoursDeterminedUnderStatement4">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#80Hours">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ANumberOfHoursEqualToNumberOfHoursThatSuchEmployeeWorks,OnAverage,OverA2-WeekPeriod">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#CarryOverFrom1YearToNext">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#AvailableForImmediateUseByEmployeeForPurposesDescribedInSuchSubsection">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Unlawful">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ConsideredToHaveFailedToPayMinimumWagesInViolationOfSection6OfFairLaborStandardsActOf1938(29U.S.C.206).">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#SubjectToPenaltiesDescribedInSections16And17OfSuchAct(29U.S.C.216;217)WithRespectToSuchViolation">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ConsideredToBeInViolationOfSection15(A)(3)OfFairLaborStandardsActOf1938(29U.S.C.215(A)(3))">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ConstruedToInAnyWayDiminishRightsThatAnEmployeeIsEntitledToUnderAnyOrFederalLaw">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ConstruedToInAnyWayDiminishBenefitsThatAnEmployeeIsEntitledToUnderAnyOrFederalLaw.">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ConstruedToInAnyWayDiminishRightsThatAnEmployeeIsEntitledToUnderAnyOrState">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ConstruedToInAnyWayDiminishBenefitsThatAnEmployeeIsEntitledToUnderAnyOrState">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ConstruedToInAnyWayDiminishRightsThatAnEmployeeIsEntitledToUnderAnyLocalLaw">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ConstruedToInAnyWayDiminishBenefitsThatAnEmployeeIsEntitledToUnderAnyLocalLaw">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ConstruedToInAnyWayDiminishRightsThatAnEmployeeIsEntitledToUnderAnyCollectiveBargainingAgreement">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ConstruedToInAnyWayDiminishBenefitsThatAnEmployeeIsEntitledToUnderAnyCollectiveBargainingAgreement">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ConstruedToInAnyWayDiminishRightsThatAnEmployeeIsEntitledToUnderAnyExistingEmployerPolicy">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ConstruedToInAnyWayDiminishBenefitsThatAnEmployeeIsEntitledToUnderAnyExistingEmployerPolicy">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ConstruedToRequireFinancialReimbursementToAnEmployeeFromAnEmployerUponEmployee'STerminationFromEmploymentForPaidSickTimeUnderThisActThatHasNotBeenUsedBySuchEmployee">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ConstruedToRequireFinancialReimbursementToAnEmployeeFromAnEmployerUponEmployee'SResignationFromEmploymentForPaidSickTimeUnderThisActThatHasNotBeenUsedBySuchEmployee">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ConstruedToRequireFinancialReimbursementToAnEmployeeFromAnEmployerUponEmployee'SRetirementFromEmploymentForPaidSickTimeUnderThisActThatHasNotBeenUsedBySuchEmployee">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ConstruedToRequireFinancialReimbursementToAnEmployeeFromAnEmployerUponEmployee'SOrSeparationFromEmploymentForPaidSickTimeUnderThisActThatHasNotBeenUsedBySuchEmployee">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ConstruedToRequireOrReimbursementToAnEmployeeFromAnEmployerUponEmployee'STerminationFromEmploymentForPaidSickTimeUnderThisActThatHasNotBeenUsedBySuchEmployee">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ConstruedToRequireOrReimbursementToAnEmployeeFromAnEmployerUponEmployee'ResignationFromEmploymentForPaidSickTimeUnderThisActThatHasNotBeenUsedBySuchEmployee">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ConstruedToRequireOrReimbursementToAnEmployeeFromAnEmployerUponEmployee'SRetirementFromEmploymentForPaidSickTimeUnderThisActThatHasNotBeenUsedBySuchEmployee">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ConstruedToRequireOrReimbursementToAnEmployeeFromAnEmployerUponEmployee'SOrSeparationFromEmploymentForPaidSickTimeUnderThisActThatHasNotBeenUsedBySuchEmployee">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Effect">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#IndividualOrand20.2,Or20.3,20.4,20.5,20.6,20.7,20.8,29.9,20.10,20.11,20.12">
+  <rdfs:subClassOf rdf:resource="#Individual"/>
+</owl:Class>
+
+<owl:Class rdf:about="#EmployeeDefinedInSection3(E)OfFairLaborStandardsActOf1938(29U.S.C.203(E))">
+  <rdfs:subClassOf rdf:resource="#Employee"/>
+</owl:Class>
+
+<owl:Class rdf:about="#CoveredUnderSubparagraph(E)IncludingSuchAnEmployeeOfLibraryOfCongress">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#CoveredUnderSubparagraph(F)IncludingSuchAnEmployeeOfLibraryOfCongress">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#EmployeeOfGovernmentAccountabilityOffice">
+  <rdfs:subClassOf rdf:resource="#Employee"/>
+</owl:Class>
+
+<owl:Class rdf:about="#EmployeeAndaStateDescribedInSection304(A)OfGovernmentEmployeeRightsActOf1991(42U.S.C.2000E-16C(A))">
+  <rdfs:subClassOf rdf:resource="#Employee"/>
+</owl:Class>
+
+<owl:Class rdf:about="#EmployeeAndAStateDescribedInSection304(A)OfGovernmentEmployeeRightsActOf1991(42U.S.C.2000E-16C(A))">
+  <rdfs:subClassOf rdf:resource="#Employee"/>
+</owl:Class>
+
+<owl:Class rdf:about="#EmployeeCoveredAsDefinedInSection101OfCongressionalAccountabilityActOf1995(2U.S.C.1301),OrThanAnApplicantForEmployment">
+  <rdfs:subClassOf rdf:resource="#Employee"/>
+</owl:Class>
+
+<owl:Class rdf:about="#EmployeeCoveredAsDefinedInSection411(C)OfTitle3,UnitedStatesCode">
+  <rdfs:subClassOf rdf:resource="#Employee"/>
+</owl:Class>
+
+<owl:Class rdf:about="#FederalOfficer">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#FederalOfficerCoveredUnderSubchapterVOfChapter63OfTitle5,UnitedStatesCode">
+  <rdfs:subClassOf rdf:resource="#FederalOfficer"/>
+</owl:Class>
+
+<owl:Class rdf:about="#EmployeeCoveredUnderSubchapterVOfChapter63OfTitle5,UnitedStatesCode">
+  <rdfs:subClassOf rdf:resource="#Employee"/>
+</owl:Class>
+
+<owl:Class rdf:about="#IndividualOrOccupyingAPositionInCivilService(AsThatTermIsDefinedInSection2101(1)OfTitle5,UnitedStatesCode)">
+  <rdfs:subClassOf rdf:resource="#Individual"/>
+</owl:Class>
+
+<owl:Class rdf:about="#EmployerAndcoveredAsDefinedInSubparagraphnotCoveredUnderSubclause(V)">
+  <rdfs:subClassOf rdf:resource="#Employer"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Entity">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#EntityEmployingAStateEmployeeDescribedInSection304(A)OfGovernmentEmployeeRightsActOf1991">
+  <rdfs:subClassOf rdf:resource="#Entity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Office">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#OfficeEmployingAsDefinedInSection101OfCongressionalAccountabilityActOf1995">
+  <rdfs:subClassOf rdf:resource="#Office"/>
+</owl:Class>
+
+<owl:Class rdf:about="#OfficeEmployingAsDefinedInSection411(C)OfTitle3,UnitedStatesCode">
+  <rdfs:subClassOf rdf:resource="#Office"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ExecutiveAgency">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ExecutiveAgencyAndasDefinedInSection105OfTitle5,UnitedStatesCodeincludingU.S.PostalServiceincludingPostalRegulatoryCommission">
+  <rdfs:subClassOf rdf:resource="#ExecutiveAgency"/>
+</owl:Class>
+
+<owl:Class rdf:about="#EngagedInCommerce(IncludingGovernment)">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#EngagedAnInIndustry">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#EngagedInActivityAffectingCommerce(IncludingGovernment),AsDefinedInSubparagraph(B)(Iii)">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#And22.2,22.3,22.4,22.5,22.6,22.7,22.8,22.9,22.10,22.11,22.12,22.13">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Successor">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#SuccessorInInterestOfAnEmployer">
+  <rdfs:subClassOf rdf:resource="#Successor"/>
+</owl:Class>
+
+<owl:Class rdf:about="#``PublicAgency''">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#``PublicAgency''AsDefinedInSection3(X)OfFairLaborStandardsActOf1938(29U.S.C.203(X))">
+  <rdfs:subClassOf rdf:resource="#``PublicAgency''"/>
+</owl:Class>
+
+<owl:Class rdf:about="#GovernmentAccountabilityOffice">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#LibraryOfCongress">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ConsideredToBeAPersonEngagedInCommerce">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ConsideredToBeAPersonEngagedInAnIndustry">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ConsideredToBeAPersonEngagedInAnActivityAffectingCommerce">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Activity">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ActivityInCommerce">
+  <rdfs:subClassOf rdf:resource="#Activity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ActivityInWhichALaborDisputeWouldHinderCommerceOrFreeFlowOfCommerce">
+  <rdfs:subClassOf rdf:resource="#Activity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ActivityInWhichALaborDisputeWouldObstructCommerceOrFreeFlowOfCommerce">
+  <rdfs:subClassOf rdf:resource="#Activity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Business">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#BusinessAnyinCommerce">
+  <rdfs:subClassOf rdf:resource="#Business"/>
+</owl:Class>
+
+<owl:Class rdf:about="#BusinessInWhichALaborDisputeWouldHinderCommerceOrFreeFlowOfCommerce">
+  <rdfs:subClassOf rdf:resource="#Business"/>
+</owl:Class>
+
+<owl:Class rdf:about="#BusinessInWhichALaborDisputeWouldObstructCommerceOrFreeFlowOfCommerce">
+  <rdfs:subClassOf rdf:resource="#Business"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Industry">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#IndustryInCommerce">
+  <rdfs:subClassOf rdf:resource="#Industry"/>
+</owl:Class>
+
+<owl:Class rdf:about="#IndustryInWhichALaborDisputeWouldHinderCommerceOrFreeFlowOfCommerce">
+  <rdfs:subClassOf rdf:resource="#Industry"/>
+</owl:Class>
+
+<owl:Class rdf:about="#IndustryInWhichALaborDisputeWouldObstructCommerceOrFreeFlowOfCommerce">
+  <rdfs:subClassOf rdf:resource="#Industry"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ActivityInCommerceOrInWhichALaborDisputeWouldObstructCommerceOrFreeFlowOfCommerce">
+  <rdfs:subClassOf rdf:resource="#Activity"/>
+</owl:Class>
+
+<owl:Class rdf:about="#BusinessInCommerce">
+  <rdfs:subClassOf rdf:resource="#Business"/>
+</owl:Class>
+
+<owl:Class rdf:about="#``Commerce''">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#``Commerce''AsDefinedInParagraphs(1)And(3)OfSection501OfLaborManagementRelationsActOf1947(29U.S.C.142(1)And(3))">
+  <rdfs:subClassOf rdf:resource="#``Commerce''"/>
+</owl:Class>
+
+<owl:Class rdf:about="#``IndustryAffectingCommerce''">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#``IndustryAffectingCommerce''AsDefinedInParagraphs(1)And(3)OfSection501OfLaborManagementRelationsActOf1947(29U.S.C.142(1)And(3))">
+  <rdfs:subClassOf rdf:resource="#``IndustryAffectingCommerce''"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Meaning">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#MeaningAndSamegivenSuchTermInSection3(E)OfFairLaborStandardsActOf1938(29U.S.C.203(E))">
+  <rdfs:subClassOf rdf:resource="#Meaning"/>
+</owl:Class>
+
+<owl:Class rdf:about="#MeaningAndSamegivenSuchTermInSection3(A)OfFairLaborStandardsActOf1938(29U.S.C.203(A))}">
+  <rdfs:subClassOf rdf:resource="#Meaning"/>
+</owl:Class>
+
+<owl:Class rdf:about="#MeaningGivenSuchTermsInSection3OfFairLaborStandardsActOf1938(29U.S.C.203).">
+  <rdfs:subClassOf rdf:resource="#Meaning"/>
+</owl:Class>
+
+<owl:Class rdf:about="#MeaningGivenSuchTermsInSection101OfFamilyAndMedicalLeaveActOf1993(29U.S.C.2611)">
+  <rdfs:subClassOf rdf:resource="#Meaning"/>
+</owl:Class>
+
+<owl:Class rdf:about="#IncrementOfCompensatedLeave">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#IncrementOfCompensatedLeaveAndprovidedByAnEmployerForUseDuringAnAbsenceFromEmploymentprovidedForAReasonDescribedInAnyParagraphOfSection2(A)IAndcalculatedBasedOnEmployee'SRequiredCompensationUnderSubparagraph(B)AndNumberOfHoursEmployeeWouldOrwiseBeNormallyScheduledToWork(OrNumberOfHoursCalculatedUnderSubparagraph(C))NotExceed$511PerDayForAUseDescribedInParagraph(1),(2),Or(3)OfSection5102(A)NotExceed$5,110InAggregateForAUseDescribedInParagraph(1),(2),Or(3)OfSection5102(A)NotExceed$200PerDayForAUseDescribedInParagraph(4),(5),Or(6)OfSection5102(A)NotExceed$2,000InAggregateForAUseDescribedInParagraph(4),(5),Or(6)OfSection5102(A)">
+  <rdfs:subClassOf rdf:resource="#IncrementOfCompensatedLeave"/>
+</owl:Class>
+
+<owl:Class rdf:about="#NotLessThanGreaterOfEmployee'SRegularRateOfPay(AsDeterminedUnderSection7(E)OfFairLaborStandardsActOf1938(29U.S.C.207(E)).">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#NotLessThanGreaterOfMinimumWageRateInEffectUnderSection6(A)(1)OfFairLaborStandardsActOf1938(29U.S.C.206(A)(1))">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#BeNotLessThanMinimumWageRateInEffectForSuchEmployeeInApplicableStateOrLocality,WhicheverIsGreater,InWhichEmployeeIsEmployed">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Two-ThirdsOfAmountDescribedInClause(B)(I)">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#AuthorityToIssueRegulations">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#AuthorityToIssueRegulationsAnd34.2,34.3,34.4,34.7,34.8,34.9">
+  <rdfs:subClassOf rdf:resource="#AuthorityToIssueRegulations"/>
+</owl:Class>
+
+<owl:Class rdf:about="#HealthCareProvider">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#PersonAny">
+  <rdfs:subClassOf rdf:resource="#Person"/>
+</owl:Class>
+
+<owl:Class rdf:about="#EmployerOfHealthCareProviders">
+  <rdfs:subClassOf rdf:resource="#Employer"/>
+</owl:Class>
+
+<owl:Class rdf:about="#EmployerOfEmergencyResponders">
+  <rdfs:subClassOf rdf:resource="#Employer"/>
+</owl:Class>
+
+<owl:Class rdf:about="#SymptomsOfCovid-19">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#MedicalDiagnosis">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#IndividualSubjectToFederalQuarantineOrderRelatedToCovid-19">
+  <rdfs:subClassOf rdf:resource="#Individual"/>
+</owl:Class>
+
+<owl:Class rdf:about="#IndividualSubjectToFederalIsolationOrderRelatedToCovid-19">
+  <rdfs:subClassOf rdf:resource="#Individual"/>
+</owl:Class>
+
+<owl:Class rdf:about="#IndividualSubjectToStateQuarantineOrderRelatedToCovid-19">
+  <rdfs:subClassOf rdf:resource="#Individual"/>
+</owl:Class>
+
+<owl:Class rdf:about="#IndividualSubjectToStateIsolationOrderRelatedToCovid-19">
+  <rdfs:subClassOf rdf:resource="#Individual"/>
+</owl:Class>
+
+<owl:Class rdf:about="#IndividualSubjectToLocalQuarantineOrderRelatedToCovid-19">
+  <rdfs:subClassOf rdf:resource="#Individual"/>
+</owl:Class>
+
+<owl:Class rdf:about="#IndividualSubjectToLocalIsolationOrderRelatedToCovid-19">
+  <rdfs:subClassOf rdf:resource="#Individual"/>
+</owl:Class>
+
+<owl:Class rdf:about="#IndividualAdvisedByAHealthCareProviderToSelf-QuarantineDueToConcernsRelatedToCovid-19">
+  <rdfs:subClassOf rdf:resource="#Individual"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Son">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#SonOfEmployee">
+  <rdfs:subClassOf rdf:resource="#Son"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Daughter">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#DaughterOfEmployee">
+  <rdfs:subClassOf rdf:resource="#Daughter"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Condition">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ConditionAndAnyOr,SubstantiallySimilar,SpecifiedBySecretaryOfHealthAndHumanServicesInConsultationWithSecretaryOfTreasuryAndSecretaryOfLabor">
+  <rdfs:subClassOf rdf:resource="#Condition"/>
+</owl:Class>
+
+<owl:Class rdf:about="#EmployeeAndreplacement,ToCoverHoursDuringWhichEmployeeIsUsingPaidSickTime">
+  <rdfs:subClassOf rdf:resource="#Employee"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Leave">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Complaint">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ComplaintAny">
+  <rdfs:subClassOf rdf:resource="#Complaint"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Proceeding">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ProceedingAndAny,UnderThisAct">
+  <rdfs:subClassOf rdf:resource="#Proceeding"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ProceedingAndAny,RelatedToThisAct(IncludingAProceedingThatSeeksEnforcementOfThisAct)">
+  <rdfs:subClassOf rdf:resource="#Proceeding"/>
+</owl:Class>
+
+<owl:Class rdf:about="#HealthCareProviders">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#HealthCareProvidersCertain">
+  <rdfs:subClassOf rdf:resource="#HealthCareProviders"/>
+</owl:Class>
+
+<owl:Class rdf:about="#EmergencyResponders">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#EmergencyRespondersCertain">
+  <rdfs:subClassOf rdf:resource="#EmergencyResponders"/>
+</owl:Class>
+
+<owl:Class rdf:about="#And34.5,34.6">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#SmallBusinesses">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#SmallBusinessesWithFewerThan50EmployeesFromRequirementsOfSection5102(A)(5)">
+  <rdfs:subClassOf rdf:resource="#SmallBusinesses"/>
+</owl:Class>
+
+<owl:Class rdf:about="#PurposesOfThisAct.">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ConsistencyBetweenThisActAndDivisionCAndDivisionGOfFamiliesFirstCoronavirusResponseAct.">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Self-Quarantine">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ApplicationOfThisSubsection">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#EmployerEach">
+  <rdfs:subClassOf rdf:resource="#Employer"/>
+</owl:Class>
+
+<owl:Class rdf:about="#EmployerSignatoryToAMultiemployerCollectiveBargainingAgreement">
+  <rdfs:subClassOf rdf:resource="#Employer"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Employees">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Notice">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#NoticeAndtoBePreparedOrApprovedBySecretaryOfLabor,OfRequirementsDescribedInThisAct">
+  <rdfs:subClassOf rdf:resource="#Notice"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Obligations">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ObligationsAnditsunderThisAct}">
+  <rdfs:subClassOf rdf:resource="#Obligations"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Pay">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#PayFromSuchFund">
+  <rdfs:subClassOf rdf:resource="#Pay"/>
+</owl:Class>
+
+<owl:Class rdf:about="#PayFromSuchPlan">
+  <rdfs:subClassOf rdf:resource="#Pay"/>
+</owl:Class>
+
+<owl:Class rdf:about="#PayFromSuchProgram">
+  <rdfs:subClassOf rdf:resource="#Pay"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Number">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#NumberEqualToAverageNumberOfHoursThatEmployeeWasScheduledPerDayOver6-MonthPeriodEndingOnDateOnWhichEmployeeTakesPaidSickTime,IncludingHoursForWhichEmployeeTookLeaveOfAnyType.">
+  <rdfs:subClassOf rdf:resource="#Number"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Expectation">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ExpectationAndReasonableofEmployeeAtTimeOfHiringOfAverageNumberOfHoursPerDayThatEmployeeWouldNormallyBeScheduledToWork">
+  <rdfs:subClassOf rdf:resource="#Expectation"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Guidelines">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#EmployeeEmployedByEmployer">
+  <rdfs:subClassOf rdf:resource="#Employee"/>
+</owl:Class>
+
+<owl:Class rdf:about="#UseOrPaidLeaveProvidedByEmployerToEmployee">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ToFollowReasonableNoticeProcedures">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+
+</rdf:RDF>
