@@ -9,6 +9,7 @@ import owlready2
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+
 constitutive_columns = [
     "Constituted Entity (Content)",
     "Constituted Entity Property (Content)",
@@ -48,6 +49,14 @@ regulative_columns = [
 original_relation_to_relation = defaultdict(dict)
 
 
+def check_observations_constraints(df_observations):
+    problematic_stmts = list(df_observations[df_observations[ACT_COND] != ""][STMT_NO])
+    if len(problematic_stmts) > 0:
+        logger.warning(
+            f"There are observations with non-empty activation condition {problematic_stmts}"
+        )
+
+
 def get_relation_name(semantic_relation_name, subject):
     a = original_relation_to_relation.get(semantic_relation_name)
     if a is not None:
@@ -58,13 +67,15 @@ def get_relation_name(semantic_relation_name, subject):
 
 
 both = ["Statement function", "Statement No.", "Statement"]
+CLASS = "IG syntax (regulative, constitutive)"
+STMT_FUNCTION = "Statement function"
+
 CON_PROP = "Constituted Properties (Content)"
 CON_PROP_PROP = "Constituted Properties Property (Content)"
 CON_FUNC = "Function"
 ENT = "Constituted Entity (Content)"
 ENT_PROP = "Constituted Entity Property (Content)"
-CLASS = "IG syntax (regulative, constitutive)"
-STMT_FUNCTION = "Statement function"
+
 
 ATTR = "Attributes (Content)"
 ATTR_PROP = "Attributes property (Content)"
@@ -82,7 +93,14 @@ FUN = "Function"
 MODAL = "Modal"
 
 ACT_COND = "Activation Condition (Content)"
+
+ENT_PROP_REF = "Constituted Entity Property (Reference to statement)"
+CON_PROP_REF = "Constituted Properties (Reference to statement)"
+CON_PROP_PROP_REF = "Constituted Properties Property (Reference to statement)"
 ACT_COND_REF = "Activation Condition (Reference to statement)"
+
+ATTR_PROP_REF = "Attributes property (Reference to statement)"
+DIR_OBJ_REF = "Direct Object (Reference to statement)"
 
 STMT = "Statement"
 STMT_NO = "Statement No."
@@ -96,6 +114,7 @@ def get_class(name):
 def fix_class_name(name):
     # TODO: fix
     name = name.lower()
+    name = name.replace("-", " ")
     name = name.replace("and[each,", "")
     name = name.replace("and[any", "")
     name = name.replace("|", "")
@@ -128,12 +147,15 @@ def create_class(name, superclass):
     return new_class
 
 
+statement_no_to_realtion = defaultdict(list)
+
+
 def define_relationship(
     subject,
     relation_name,
     object,
+    statement_no,
     relation_constraint="",
-    statement_no=None,
     unique_relation=True,
 ):
     comments = []
@@ -167,6 +189,8 @@ def define_relationship(
             relation.comment = comments
             relation.comment.append(f"From statement: {statement_no}")
             relation.comment = ["\n".join(relation.comment)]
+
+    statement_no_to_realtion[statement_no].append((subject, relation_name, object))
 
 
 def get_passive(verb):
@@ -226,7 +250,6 @@ def create_classes_from_df(subclasses_df, connector_word=None):
 def create_relations_from_regulative_aim(
     df_subject, df_relation, df_object, df_indir_object, stmt_nos
 ):
-    # TODO: extract rules
     forward_relations = 0
     passive_relations = 0
     for (_, subj_row), (_, rel_row), (_, obj_row), (_, iobj_row), stmt_no in zip(
@@ -294,7 +317,6 @@ def create_relations_from_obserations_aim_from_df(df):
 
 
 def create_constitutive_modal_function_relations_from_df(df):
-    # TODO: extract rules
     for _, row in df.iterrows():
         subj = get_class(" ".join(row[[ENT, ENT_PROP]]))
         obj = get_class(" ".join(row[[CON_PROP, CON_PROP_PROP]]))

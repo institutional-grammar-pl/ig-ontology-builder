@@ -4,10 +4,11 @@ import pandas as pd
 
 import ig
 from ig import both, constitutive_columns, create_classes_from_df, regulative_columns
+from rules import define_activation_condition_rules_from_df
 
-pd.set_option("display.max_colwidth", None)
-pd.set_option("display.max_rows", None)
-pd.set_option("display.max_columns", None)
+# pd.set_option("display.max_colwidth", None)
+# pd.set_option("display.max_rows", None)
+# pd.set_option("display.max_columns", None)
 df = pd.read_excel("2021.04.16_all_H.R.6201_Emergency_Paid_Sick_Leave.xlsx", skiprows=1)
 # preprocessign df
 df = df.fillna("")
@@ -44,24 +45,32 @@ constitutive = df[df[ig.CLASS] == "constitutive"][constitutive_columns + both]
 regulative = df[df[ig.CLASS] == "regulative"][regulative_columns + both]
 df_constitutive = constitutive[constitutive[ig.STMT_FUNCTION] == "constitutive"]
 df_observations = constitutive[constitutive[ig.STMT_FUNCTION] == "observation"]
+df_reg_observation = regulative[regulative[ig.STMT_FUNCTION] == "observation"]
+df_regulative = regulative[regulative[ig.STMT_FUNCTION] == "regulative"]
+
+# Cheks
+ig.check_observations_constraints(df_observations)
+ig.check_observations_constraints(df_reg_observation)
+
+
 # # Constitutive
-## Constitutive -- observations
+# ## Constitutive -- observations
 create_classes_from_df(
     df_observations[
         [ig.ENT, ig.CON_FUNC, ig.CON_PROP, ig.CON_PROP_PROP]
     ].drop_duplicates(),
     connector_word="that",
 )
-## Constitutive -- proper
+# ## Constitutive -- proper
 df_constitutive = df_constitutive[df_constitutive[ig.ENT] != ""]
+# ### Constitutive -- proper: entities
 create_classes_from_df(df_constitutive[[ig.ENT, ig.ENT_PROP]])
+# ### Constitutive -- proper: Constituted Properties
 create_classes_from_df(df_constitutive[[ig.CON_PROP, ig.CON_PROP_PROP]])
 ...
 df_constitutive[[ig.CON_PROP, ig.CON_PROP_PROP]]
 df[df[ig.STMT_NO] == 34.2]
 # # Regulative statements
-df_reg_observation = regulative[regulative[ig.STMT_FUNCTION] == "observation"]
-df_regulative = regulative[regulative[ig.STMT_FUNCTION] == "regulative"]
 # ## Regulative -- observations
 # ### Regulative -- observations: attr
 create_classes_from_df(df_reg_observation[[ig.ATTR, ig.ATTR_PROP]])
@@ -71,11 +80,11 @@ create_classes_from_df(df_reg_observation[[ig.DIR_OBJ, ig.DIR_OBJ_PROP]])
 create_classes_from_df(df_reg_observation[[ig.INDIR_OBJ, ig.INDIR_OBJ_PROP]])
 # ## Regulative -- proper regulative
 # ### Regulative -- observations: attr
-_ = create_classes_from_df(df_regulative[[ig.ATTR, ig.ATTR_PROP]])
+create_classes_from_df(df_regulative[[ig.ATTR, ig.ATTR_PROP]])
 # ### Regulative -- objects
-_ = create_classes_from_df(df_regulative[[ig.DIR_OBJ, ig.DIR_OBJ_PROP]])
+create_classes_from_df(df_regulative[[ig.DIR_OBJ, ig.DIR_OBJ_PROP]])
 # ### Regulative -- indirect objects
-_ = create_classes_from_df(df_regulative[[ig.INDIR_OBJ, ig.INDIR_OBJ_PROP]])
+create_classes_from_df(df_regulative[[ig.INDIR_OBJ, ig.INDIR_OBJ_PROP]])
 # # Relations extraction
 # ### Regulative -- observations:  possible (aim) relations
 ig.create_relations_from_obserations_aim_from_df(df_reg_observation)
@@ -89,4 +98,10 @@ ig.create_relations_from_regulative_aim(
 )
 # ### Constitutive (modal, function) relations
 ig.create_constitutive_modal_function_relations_from_df(df_constitutive)
+
+# Defining rules
+# ## Activation conditions
+define_activation_condition_rules_from_df(df_regulative)
+define_activation_condition_rules_from_df(df_constitutive)
+
 ig.onto.save("ig.owl")
