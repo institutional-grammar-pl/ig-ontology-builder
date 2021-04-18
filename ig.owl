@@ -12,13 +12,13 @@
 <owl:ObjectProperty rdf:about="#advised">
   <rdfs:domain rdf:resource="#HealthCareProvider"/>
   <rdfs:range rdf:resource="#Employee"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 1.1</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 1.10</rdfs:comment>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#is_adviseded">
   <rdfs:domain rdf:resource="#Employee"/>
   <rdfs:range rdf:resource="#SelfQuarantine"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 1.1</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 1.10</rdfs:comment>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#experience">
@@ -53,7 +53,7 @@ From statement: 1.16
 From statement: 1.17
 From statement: 1.18
 From statement: 1.19
-From statement: 1.2
+From statement: 1.20
 From statement: 1.21
 From statement: 1.22
 From statement: 1.23
@@ -323,7 +323,7 @@ From statement: 17.6
 From statement: 17.7
 From statement: 17.8
 From statement: 17.9
-From statement: 17.1
+From statement: 17.10
 From statement: 17.11
 From statement: 17.12
 From statement: 17.13
@@ -371,7 +371,7 @@ From statement: 20.6
 From statement: 20.7
 From statement: 20.8
 From statement: 20.9
-From statement: 20.1
+From statement: 20.10
 From statement: 20.11
 From statement: 20.12</rdfs:comment>
 </owl:ObjectProperty>
@@ -423,7 +423,7 @@ From statement: 21.9</rdfs:comment>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 22.17
 From statement: 22.18
 From statement: 22.19
-From statement: 22.2</rdfs:comment>
+From statement: 22.20</rdfs:comment>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#shall_be''''''''''">
@@ -469,7 +469,7 @@ From statement: 24.9</rdfs:comment>
   <rdfs:range rdf:resource="#IndustryInCommerce"/>
   <rdfs:range rdf:resource="#IndustryInWhichALaborDisputeWouldHinderCommerceOrFreeFlowOfCommerce"/>
   <rdfs:range rdf:resource="#IndustryInWhichALaborDisputeWouldObstructCommerceOrFreeFlowOfCommerce"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 24.1
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 24.10
 From statement: 24.11
 From statement: 24.12
 From statement: 24.13
@@ -489,7 +489,7 @@ From statement: 24.18</rdfs:comment>
 <owl:ObjectProperty rdf:about="#include'">
   <rdfs:domain rdf:resource="#Term``IndustryOrActivityAffectingCommerce''"/>
   <rdfs:range rdf:resource="#``IndustryAffectingCommerce''AsDefinedInParagraphs(1)And(3)OfSection501OfLaborManagementRelationsActOf1947(29U.S.C.142(1)And(3))"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 24.2</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 24.20</rdfs:comment>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#have">
@@ -1368,20 +1368,18 @@ From statement: 30.3</rdfs:comment>
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
-<swrl:Variable rdf:about="urn:swrl#q"/>
-
-<swrl:Variable rdf:about="urn:swrl#z"/>
+<swrl:Variable rdf:about="urn:swrl#x"/>
 
 <swrl:Variable rdf:about="urn:swrl#y"/>
 
-<swrl:Variable rdf:about="urn:swrl#x"/>
+<swrl:Variable rdf:about="urn:swrl#q"/>
 
 <swrl:Imp>
   <swrl:body>
     <rdf:Description>
       <rdf:first>
         <swrl:ClassAtom>
-          <swrl:classPredicate rdf:resource="#Employee"/>
+          <swrl:classPredicate rdf:resource="#EmployeeThatIsUnableToTelework"/>
           <swrl:argument1 rdf:resource="urn:swrl#x"/>
         </swrl:ClassAtom>
       </rdf:first>
@@ -1389,40 +1387,19 @@ From statement: 30.3</rdfs:comment>
         <rdf:Description>
           <rdf:first>
             <swrl:ClassAtom>
-              <swrl:classPredicate rdf:resource="#SonOfEmployee"/>
-              <swrl:argument1 rdf:resource="urn:swrl#z"/>
+              <swrl:classPredicate rdf:resource="#PaidSickTime"/>
+              <swrl:argument1 rdf:resource="urn:swrl#y"/>
             </swrl:ClassAtom>
           </rdf:first>
           <rdf:rest>
             <rdf:Description>
               <rdf:first>
-                <swrl:IndividualPropertyAtom>
-                  <swrl:propertyPredicate rdf:resource="#care"/>
-                  <swrl:argument1 rdf:resource="urn:swrl#x"/>
-                  <swrl:argument2 rdf:resource="urn:swrl#z"/>
-                </swrl:IndividualPropertyAtom>
+                <swrl:ClassAtom>
+                  <swrl:classPredicate rdf:resource="#EmployeeEmployedByEmployer"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#q"/>
+                </swrl:ClassAtom>
               </rdf:first>
-              <rdf:rest>
-                <rdf:Description>
-                  <rdf:first>
-                    <swrl:ClassAtom>
-                      <swrl:classPredicate rdf:resource="#PaidSickTime"/>
-                      <swrl:argument1 rdf:resource="urn:swrl#y"/>
-                    </swrl:ClassAtom>
-                  </rdf:first>
-                  <rdf:rest>
-                    <rdf:Description>
-                      <rdf:first>
-                        <swrl:ClassAtom>
-                          <swrl:classPredicate rdf:resource="#EmployeeEmployedByEmployer"/>
-                          <swrl:argument1 rdf:resource="urn:swrl#q"/>
-                        </swrl:ClassAtom>
-                      </rdf:first>
-                      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                    </rdf:Description>
-                  </rdf:rest>
-                </rdf:Description>
-              </rdf:rest>
+              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
             </rdf:Description>
           </rdf:rest>
         </rdf:Description>
@@ -1448,7 +1425,7 @@ From statement: 30.3</rdfs:comment>
     <rdf:Description>
       <rdf:first>
         <swrl:ClassAtom>
-          <swrl:classPredicate rdf:resource="#Employee"/>
+          <swrl:classPredicate rdf:resource="#EmployeeThatIsUnableToTelework"/>
           <swrl:argument1 rdf:resource="urn:swrl#x"/>
         </swrl:ClassAtom>
       </rdf:first>
@@ -1456,40 +1433,19 @@ From statement: 30.3</rdfs:comment>
         <rdf:Description>
           <rdf:first>
             <swrl:ClassAtom>
-              <swrl:classPredicate rdf:resource="#SonOfEmployee"/>
-              <swrl:argument1 rdf:resource="urn:swrl#z"/>
+              <swrl:classPredicate rdf:resource="#Employer"/>
+              <swrl:argument1 rdf:resource="urn:swrl#y"/>
             </swrl:ClassAtom>
           </rdf:first>
           <rdf:rest>
             <rdf:Description>
               <rdf:first>
-                <swrl:IndividualPropertyAtom>
-                  <swrl:propertyPredicate rdf:resource="#care"/>
-                  <swrl:argument1 rdf:resource="urn:swrl#x"/>
-                  <swrl:argument2 rdf:resource="urn:swrl#z"/>
-                </swrl:IndividualPropertyAtom>
+                <swrl:ClassAtom>
+                  <swrl:classPredicate rdf:resource="#PaidSickTime"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#q"/>
+                </swrl:ClassAtom>
               </rdf:first>
-              <rdf:rest>
-                <rdf:Description>
-                  <rdf:first>
-                    <swrl:ClassAtom>
-                      <swrl:classPredicate rdf:resource="#Employer"/>
-                      <swrl:argument1 rdf:resource="urn:swrl#y"/>
-                    </swrl:ClassAtom>
-                  </rdf:first>
-                  <rdf:rest>
-                    <rdf:Description>
-                      <rdf:first>
-                        <swrl:ClassAtom>
-                          <swrl:classPredicate rdf:resource="#PaidSickTime"/>
-                          <swrl:argument1 rdf:resource="urn:swrl#q"/>
-                        </swrl:ClassAtom>
-                      </rdf:first>
-                      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                    </rdf:Description>
-                  </rdf:rest>
-                </rdf:Description>
-              </rdf:rest>
+              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
             </rdf:Description>
           </rdf:rest>
         </rdf:Description>
@@ -1515,48 +1471,27 @@ From statement: 30.3</rdfs:comment>
     <rdf:Description>
       <rdf:first>
         <swrl:ClassAtom>
-          <swrl:classPredicate rdf:resource="#Employee"/>
-          <swrl:argument1 rdf:resource="urn:swrl#y"/>
+          <swrl:classPredicate rdf:resource="#EmployeeThatIsUnableToWork"/>
+          <swrl:argument1 rdf:resource="urn:swrl#x"/>
         </swrl:ClassAtom>
       </rdf:first>
       <rdf:rest>
         <rdf:Description>
           <rdf:first>
             <swrl:ClassAtom>
-              <swrl:classPredicate rdf:resource="#SonOfEmployee"/>
-              <swrl:argument1 rdf:resource="urn:swrl#z"/>
+              <swrl:classPredicate rdf:resource="#PaidSickTime"/>
+              <swrl:argument1 rdf:resource="urn:swrl#y"/>
             </swrl:ClassAtom>
           </rdf:first>
           <rdf:rest>
             <rdf:Description>
               <rdf:first>
-                <swrl:IndividualPropertyAtom>
-                  <swrl:propertyPredicate rdf:resource="#care"/>
-                  <swrl:argument1 rdf:resource="urn:swrl#y"/>
-                  <swrl:argument2 rdf:resource="urn:swrl#z"/>
-                </swrl:IndividualPropertyAtom>
+                <swrl:ClassAtom>
+                  <swrl:classPredicate rdf:resource="#EmployeeEmployedByEmployer"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#q"/>
+                </swrl:ClassAtom>
               </rdf:first>
-              <rdf:rest>
-                <rdf:Description>
-                  <rdf:first>
-                    <swrl:ClassAtom>
-                      <swrl:classPredicate rdf:resource="#Employee"/>
-                      <swrl:argument1 rdf:resource="urn:swrl#y"/>
-                    </swrl:ClassAtom>
-                  </rdf:first>
-                  <rdf:rest>
-                    <rdf:Description>
-                      <rdf:first>
-                        <swrl:ClassAtom>
-                          <swrl:classPredicate rdf:resource="#SelfQuarantine"/>
-                          <swrl:argument1 rdf:resource="urn:swrl#q"/>
-                        </swrl:ClassAtom>
-                      </rdf:first>
-                      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                    </rdf:Description>
-                  </rdf:rest>
-                </rdf:Description>
-              </rdf:rest>
+              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
             </rdf:Description>
           </rdf:rest>
         </rdf:Description>
@@ -1567,7 +1502,7 @@ From statement: 30.3</rdfs:comment>
     <rdf:Description>
       <rdf:first>
         <swrl:IndividualPropertyAtom>
-          <swrl:propertyPredicate rdf:resource="#is_adviseded"/>
+          <swrl:propertyPredicate rdf:resource="#shall_be_provided_to"/>
           <swrl:argument1 rdf:resource="urn:swrl#y"/>
           <swrl:argument2 rdf:resource="urn:swrl#q"/>
         </swrl:IndividualPropertyAtom>
@@ -1582,48 +1517,27 @@ From statement: 30.3</rdfs:comment>
     <rdf:Description>
       <rdf:first>
         <swrl:ClassAtom>
-          <swrl:classPredicate rdf:resource="#Employee"/>
-          <swrl:argument1 rdf:resource="urn:swrl#q"/>
+          <swrl:classPredicate rdf:resource="#EmployeeThatIsUnableToWork"/>
+          <swrl:argument1 rdf:resource="urn:swrl#x"/>
         </swrl:ClassAtom>
       </rdf:first>
       <rdf:rest>
         <rdf:Description>
           <rdf:first>
             <swrl:ClassAtom>
-              <swrl:classPredicate rdf:resource="#SonOfEmployee"/>
-              <swrl:argument1 rdf:resource="urn:swrl#z"/>
+              <swrl:classPredicate rdf:resource="#Employer"/>
+              <swrl:argument1 rdf:resource="urn:swrl#y"/>
             </swrl:ClassAtom>
           </rdf:first>
           <rdf:rest>
             <rdf:Description>
               <rdf:first>
-                <swrl:IndividualPropertyAtom>
-                  <swrl:propertyPredicate rdf:resource="#care"/>
+                <swrl:ClassAtom>
+                  <swrl:classPredicate rdf:resource="#PaidSickTime"/>
                   <swrl:argument1 rdf:resource="urn:swrl#q"/>
-                  <swrl:argument2 rdf:resource="urn:swrl#z"/>
-                </swrl:IndividualPropertyAtom>
+                </swrl:ClassAtom>
               </rdf:first>
-              <rdf:rest>
-                <rdf:Description>
-                  <rdf:first>
-                    <swrl:ClassAtom>
-                      <swrl:classPredicate rdf:resource="#HealthCareProvider"/>
-                      <swrl:argument1 rdf:resource="urn:swrl#y"/>
-                    </swrl:ClassAtom>
-                  </rdf:first>
-                  <rdf:rest>
-                    <rdf:Description>
-                      <rdf:first>
-                        <swrl:ClassAtom>
-                          <swrl:classPredicate rdf:resource="#Employee"/>
-                          <swrl:argument1 rdf:resource="urn:swrl#q"/>
-                        </swrl:ClassAtom>
-                      </rdf:first>
-                      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                    </rdf:Description>
-                  </rdf:rest>
-                </rdf:Description>
-              </rdf:rest>
+              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
             </rdf:Description>
           </rdf:rest>
         </rdf:Description>
@@ -1634,7 +1548,7 @@ From statement: 30.3</rdfs:comment>
     <rdf:Description>
       <rdf:first>
         <swrl:IndividualPropertyAtom>
-          <swrl:propertyPredicate rdf:resource="#advised"/>
+          <swrl:propertyPredicate rdf:resource="#shall_provide"/>
           <swrl:argument1 rdf:resource="urn:swrl#y"/>
           <swrl:argument2 rdf:resource="urn:swrl#q"/>
         </swrl:IndividualPropertyAtom>

@@ -57,6 +57,12 @@ def check_observations_constraints(df_observations):
         )
 
 
+def check_duplicates(df):
+    a = df[df[STMT_NO].duplicated()][STMT_NO]
+    if len(a) > 0:
+        logger.warning(f"Duplicated statement numbers: {list(a)}")
+
+
 def get_relation_name(semantic_relation_name, subject):
     a = original_relation_to_relation.get(semantic_relation_name)
     if a is not None:
@@ -148,6 +154,7 @@ def create_class(name, superclass):
 
 
 statement_no_to_realtion = defaultdict(list)
+statement_no_to_constituted_subclass = defaultdict(dict)
 
 
 def define_relationship(
@@ -218,29 +225,31 @@ def report_missing(subj, obj, stmt_no):
     )
 
 
-def create_classes_from_df(subclasses_df, connector_word=None):
+def create_classes_from_df(
+    subclasses_df, statement_nos, connector_word=None, class_type="default"
+):
     created_classes = []
-    for id, row in subclasses_df.iterrows():
+    for (id, row), stmt_no in zip(subclasses_df.iterrows(), statement_nos):
         try:
             superclass_name = row[0]
             if re.search(illegal_regex, superclass_name):
                 report_annotation_error(id, superclass_name)
-
             superclass = get_class(superclass_name)
             if superclass is None:
                 superclass = create_base_class(superclass_name)
-
             if connector_word is not None:
                 subclass_name = " ".join([row[0], connector_word, *row[1:]])
             else:
                 subclass_name = " ".join(row)
             if re.search(illegal_regex, " ".join(row[1:])):
-                report_annotation_error(id, " ".join(row[1:]))
-
+                report_annotation_error(stmt_no, " ".join(row[1:]))
             if row[1] != "":  # do not create empty
                 subclass = create_class(subclass_name, superclass)
+                statement_no_to_constituted_subclass[stmt_no][class_type] = subclass
             else:
+                statement_no_to_constituted_subclass[stmt_no][class_type] = superclass
                 subclass = None
+
             created_classes.append((superclass, subclass))
         except TypeError as e:
             logger.warning(e)

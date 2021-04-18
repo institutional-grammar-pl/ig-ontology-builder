@@ -17,17 +17,27 @@ def get_act_cond(act_cond_str):
         return act_cond_str.strip("[]")
 
 
+def _check_subclasses(a, b):
+    if a is None or b is None:
+        return False
+    return a == b or issubclass(a, b) or issubclass(b, a)
+
+
 def get_rule(sub, rel, obj, concl_sub, concl_rel, concl_obj, negation=False):
     s1, s2, o1, o2 = "?x", "?y", "?z", "?q"
-    if sub == concl_sub:
+    if _check_subclasses(sub, concl_sub):
         s1 = s2
-    if sub == concl_obj:
+    if _check_subclasses(sub, concl_obj):
         s1 = o2
-    if obj == concl_obj:
+    if _check_subclasses(obj, concl_obj):
         o1 = o2
-    if obj == concl_sub:
+    if _check_subclasses(obj, concl_sub):
         o1 = s2
-    return f"{sub}({s1}), {obj}({o1}), {rel}({s1}, {o1}), {concl_sub}({s2}), {concl_obj}({o2}) -> {concl_rel}({s2},{o2})"
+    if rel is not None:
+        rule = f"{sub.name}({s1}), {obj.name}({o1}), {concl_sub.name}({s2}), {concl_obj.name}({o2}), {rel}({s1}, {o1}) -> {concl_rel}({s2},{o2})"
+    else:
+        rule = f"{sub.name}({s1}), {concl_sub.name}({s2}), {concl_obj.name}({o2}) -> {concl_rel}({s2},{o2})"
+    return rule
 
 
 def get_rules_from_statements(
@@ -35,20 +45,46 @@ def get_rules_from_statements(
 ):
     logger.debug("get_rules_from_statements")
     rules = []
-    for concl_subj, concl_rel, concl_obj in ig.statement_no_to_realtion[
-        colclusion_stmt_no
-    ]:
-        for subj, relation, obj in ig.statement_no_to_realtion[
+    conclusion_relations = ig.statement_no_to_realtion[colclusion_stmt_no]
+    activation_relations = ig.statement_no_to_realtion[activation_condition_stmt_no]
+    if len(conclusion_relations) == 0:
+        logger.warning(
+            f"No conclusion relations found for statement({colclusion_stmt_no})"
+        )
+    if len(activation_relations) == 0:
+        logger.info(
+            f"No activation relations found for statement ({activation_condition_stmt_no}). Checking subclasses"
+        )
+        subclass_subj = ig.statement_no_to_constituted_subclass[
             activation_condition_stmt_no
-        ]:
+        ]["default"]
+        relation = None
+    else:
+        subclass_subj = None
+
+    for concl_subj, concl_rel, concl_obj in conclusion_relations:
+        if subclass_subj is None:
+            for subj, relation, obj in activation_relations:
+                rules.append(
+                    get_rule(
+                        subj,
+                        relation,
+                        obj,
+                        concl_subj,
+                        concl_rel,
+                        concl_obj,
+                        negation=negation,
+                    )
+                )
+        else:
             rules.append(
                 get_rule(
-                    subj.name,
-                    relation,
-                    obj.name,
-                    concl_subj.name,
+                    subclass_subj,
+                    None,
+                    None,
+                    concl_subj,
                     concl_rel,
-                    concl_obj.name,
+                    concl_obj,
                     negation=negation,
                 )
             )
@@ -78,7 +114,7 @@ def define_rules(act_cond, stmt_no, negation=False):
         #             act_cond = act_cond.strip("NOT ")
         #             define_rules(act_cond, stmt_no, negation=(not negation))
         else:
-            act_cond = float(act_cond)
+            # act_cond = float(act_cond)
             get_rules_from_statements(act_cond, stmt_no, negation=negation)
 
 

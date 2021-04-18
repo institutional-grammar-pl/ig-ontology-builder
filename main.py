@@ -1,18 +1,24 @@
-#!/usr/bin/env python
-# coding: utf-8
+import logging
+
 import pandas as pd
 
 import ig
 from ig import both, constitutive_columns, create_classes_from_df, regulative_columns
 from rules import define_activation_condition_rules_from_df
 
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
 # pd.set_option("display.max_colwidth", None)
 # pd.set_option("display.max_rows", None)
 # pd.set_option("display.max_columns", None)
-df = pd.read_excel("2021.04.16_all_H.R.6201_Emergency_Paid_Sick_Leave.xlsx", skiprows=1)
+df = pd.read_excel(
+    "2021.04.16_all_H.R.6201_Emergency_Paid_Sick_Leave (3).xlsx", skiprows=1
+)
 # preprocessign df
 df = df.fillna("")
 df = df.applymap(lambda t: t.strip() if type(t) == str else t)
+ig.check_duplicates(df)
 df2 = df[
     [
         "Activation Condition (Content).1",
@@ -41,6 +47,8 @@ cols = [
 ]
 for c in cols:
     df.loc[df2[c] != "", c] = df2[c]
+
+logger.info("Loaded activation conditions(references): {sum(df[ig.ACT_COND_REF]!=''}")
 constitutive = df[df[ig.CLASS] == "constitutive"][constitutive_columns + both]
 regulative = df[df[ig.CLASS] == "regulative"][regulative_columns + both]
 df_constitutive = constitutive[constitutive[ig.STMT_FUNCTION] == "constitutive"]
@@ -56,35 +64,66 @@ ig.check_observations_constraints(df_reg_observation)
 # # Constitutive
 # ## Constitutive -- observations
 create_classes_from_df(
-    df_observations[
-        [ig.ENT, ig.CON_FUNC, ig.CON_PROP, ig.CON_PROP_PROP]
-    ].drop_duplicates(),
+    df_observations[[ig.ENT, ig.CON_FUNC, ig.CON_PROP, ig.CON_PROP_PROP]],
+    statement_nos=df_observations[ig.STMT_NO],
     connector_word="that",
 )
 # ## Constitutive -- proper
 df_constitutive = df_constitutive[df_constitutive[ig.ENT] != ""]
 # ### Constitutive -- proper: entities
-create_classes_from_df(df_constitutive[[ig.ENT, ig.ENT_PROP]])
+create_classes_from_df(
+    df_constitutive[[ig.ENT, ig.ENT_PROP]],
+    df_constitutive[ig.STMT_NO],
+    class_type=ig.ENT,
+)
 # ### Constitutive -- proper: Constituted Properties
-create_classes_from_df(df_constitutive[[ig.CON_PROP, ig.CON_PROP_PROP]])
-...
-df_constitutive[[ig.CON_PROP, ig.CON_PROP_PROP]]
-df[df[ig.STMT_NO] == 34.2]
+create_classes_from_df(
+    df_constitutive[[ig.CON_PROP, ig.CON_PROP_PROP]],
+    df_constitutive[ig.STMT_NO],
+    class_type=ig.CON_PROP,
+)
 # # Regulative statements
 # ## Regulative -- observations
 # ### Regulative -- observations: attr
-create_classes_from_df(df_reg_observation[[ig.ATTR, ig.ATTR_PROP]])
+create_classes_from_df(
+    df_reg_observation[[ig.ATTR, ig.ATTR_PROP]],
+    df_reg_observation[ig.STMT_NO],
+    class_type=ig.ATTR,
+)
 # ### Regulative -- observations: direct object
-create_classes_from_df(df_reg_observation[[ig.DIR_OBJ, ig.DIR_OBJ_PROP]])
+create_classes_from_df(
+    df_reg_observation[[ig.DIR_OBJ, ig.DIR_OBJ_PROP]],
+    df_reg_observation[ig.STMT_NO],
+    class_type=ig.DIR_OBJ,
+)
 # ### Regulative -- observations: indirect objects
-create_classes_from_df(df_reg_observation[[ig.INDIR_OBJ, ig.INDIR_OBJ_PROP]])
+create_classes_from_df(
+    df_reg_observation[[ig.INDIR_OBJ, ig.INDIR_OBJ_PROP]],
+    df_reg_observation[ig.STMT_NO],
+    class_type=ig.INDIR_OBJ,
+)
 # ## Regulative -- proper regulative
 # ### Regulative -- observations: attr
-create_classes_from_df(df_regulative[[ig.ATTR, ig.ATTR_PROP]])
+create_classes_from_df(
+    df_regulative[[ig.ATTR, ig.ATTR_PROP]],
+    df_regulative[ig.STMT_NO],
+    class_type=ig.ATTR,
+)
 # ### Regulative -- objects
-create_classes_from_df(df_regulative[[ig.DIR_OBJ, ig.DIR_OBJ_PROP]])
+create_classes_from_df(
+    df_regulative[[ig.DIR_OBJ, ig.DIR_OBJ_PROP]],
+    df_regulative[ig.STMT_NO],
+    class_type=ig.DIR_OBJ,
+)
 # ### Regulative -- indirect objects
-create_classes_from_df(df_regulative[[ig.INDIR_OBJ, ig.INDIR_OBJ_PROP]])
+create_classes_from_df(
+    df_regulative[[ig.INDIR_OBJ, ig.INDIR_OBJ_PROP]],
+    df_regulative[ig.STMT_NO],
+    class_type=ig.INDIR_OBJ,
+)
+ig.statement_no_to_constituted_subclass = dict(
+    ig.statement_no_to_constituted_subclass
+)  # froze dict
 # # Relations extraction
 # ### Regulative -- observations:  possible (aim) relations
 ig.create_relations_from_obserations_aim_from_df(df_reg_observation)
@@ -98,6 +137,7 @@ ig.create_relations_from_regulative_aim(
 )
 # ### Constitutive (modal, function) relations
 ig.create_constitutive_modal_function_relations_from_df(df_constitutive)
+
 
 # Defining rules
 # ## Activation conditions
