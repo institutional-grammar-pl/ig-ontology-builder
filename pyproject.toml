@@ -12,6 +12,7 @@ openpyxl = "^3.0.7"
 jupyter = "^1.0.0"
 Owlready2 = "^0.29"
 lemminflect = "^0.2.2"
+typer = "^0.3.2"
 
 [tool.poetry.dev-dependencies]
 jupyter = "^1.0.0"

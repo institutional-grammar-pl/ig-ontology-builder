@@ -68,8 +68,8 @@ From statement: 1.25</rdfs:comment>
   <rdfs:range rdf:resource="#HealthCareProvidersCertain"/>
   <rdfs:range rdf:resource="#EmergencyRespondersCertain"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 2.3
-From statement: 34.2
-From statement: 34.3</rdfs:comment>
+From statement: 35.2
+From statement: 35.3</rdfs:comment>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#is_excluded">
@@ -122,28 +122,22 @@ From statement: 34.3</rdfs:comment>
 From statement: 12.9</rdfs:comment>
 </owl:ObjectProperty>
 
-<owl:ObjectProperty rdf:about="#allow">
-  <rdfs:domain rdf:resource="#SecretaryOfLabor"/>
-  <rdfs:range rdf:resource="#And34.5,34.6"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 34.4</rdfs:comment>
-</owl:ObjectProperty>
-
 <owl:ObjectProperty rdf:about="#exempts">
   <rdfs:domain rdf:resource="#SecretaryOfLabor"/>
   <rdfs:range rdf:resource="#SmallBusinessesWithFewerThan50EmployeesFromRequirementsOfSection5102(A)(5)"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 34.7</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 35.7</rdfs:comment>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#carry_out">
   <rdfs:domain rdf:resource="#SecretaryOfLabor"/>
   <rdfs:range rdf:resource="#PurposesOfThisAct."/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 34.8</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 35.8</rdfs:comment>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#ensure">
   <rdfs:domain rdf:resource="#SecretaryOfLabor"/>
   <rdfs:range rdf:resource="#ConsistencyBetweenThisActAndDivisionCAndDivisionGOfFamiliesFirstCoronavirusResponseAct."/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 34.9</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 35.9</rdfs:comment>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#shall_provide">
@@ -209,25 +203,25 @@ From statement: 16.3</rdfs:comment>
   <rdfs:range rdf:resource="#NumberEqualToAverageNumberOfHoursThatEmployeeWasScheduledPerDayOver6MonthPeriodEndingOnDateOnWhichEmployeeTakesPaidSickTime,IncludingHoursForWhichEmployeeTookLeaveOfAnyType."/>
   <rdfs:range rdf:resource="#ExpectationAndReasonableofEmployeeAtTimeOfHiringOfAverageNumberOfHoursPerDayThatEmployeeWouldNormallyBeScheduledToWork"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 32.1
-From statement: 31.2</rdfs:comment>
+From statement: 32.2</rdfs:comment>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#shall_issue">
   <rdfs:domain rdf:resource="#SecretaryOfLabor"/>
   <rdfs:range rdf:resource="#Guidelines"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 32.1</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 33.1</rdfs:comment>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#may_require">
   <rdfs:domain rdf:resource="#Employer"/>
   <rdfs:range rdf:resource="#Employee"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 33.1</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 34.1</rdfs:comment>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#may_be_required_to">
   <rdfs:domain rdf:resource="#Employee"/>
   <rdfs:range rdf:resource="#ToFollowReasonableNoticeProcedures"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 33.1</rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 34.1</rdfs:comment>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#shall_be">
@@ -408,12 +402,6 @@ From statement: 21.8
 From statement: 21.9</rdfs:comment>
 </owl:ObjectProperty>
 
-<owl:ObjectProperty rdf:about="#mean''">
-  <rdfs:domain rdf:resource="#Term``CoveredEmployer''"/>
-  <rdfs:range rdf:resource="#And22.2,22.3,22.4,22.5,22.6,22.7,22.8,22.9,22.10,22.11,22.12,22.13"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 22.1</rdfs:comment>
-</owl:ObjectProperty>
-
 <owl:ObjectProperty rdf:about="#includes">
   <rdfs:domain rdf:resource="#Term``CoveredEmployer''"/>
   <rdfs:range rdf:resource="#SuccessorInInterestOfAnEmployer"/>
@@ -436,7 +424,7 @@ From statement: 23.2
 From statement: 23.3</rdfs:comment>
 </owl:ObjectProperty>
 
-<owl:ObjectProperty rdf:about="#mean'''">
+<owl:ObjectProperty rdf:about="#mean''">
   <rdfs:domain rdf:resource="#Term``Commerce''"/>
   <rdfs:range rdf:resource="#ActivityInCommerce"/>
   <rdfs:range rdf:resource="#ActivityInWhichALaborDisputeWouldHinderCommerceOrFreeFlowOfCommerce"/>
@@ -458,7 +446,7 @@ From statement: 24.8
 From statement: 24.9</rdfs:comment>
 </owl:ObjectProperty>
 
-<owl:ObjectProperty rdf:about="#mean''''">
+<owl:ObjectProperty rdf:about="#mean'''">
   <rdfs:domain rdf:resource="#Term``IndustryOrActivityAffectingCommerce''"/>
   <rdfs:range rdf:resource="#ActivityInCommerce"/>
   <rdfs:range rdf:resource="#ActivityInWhichALaborDisputeWouldHinderCommerceOrFreeFlowOfCommerce"/>
@@ -528,7 +516,7 @@ From statement: 24.18</rdfs:comment>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 28.2</rdfs:comment>
 </owl:ObjectProperty>
 
-<owl:ObjectProperty rdf:about="#mean'''''">
+<owl:ObjectProperty rdf:about="#mean''''">
   <rdfs:domain rdf:resource="#Term``PaidSickTime''"/>
   <rdfs:range rdf:resource="#IncrementOfCompensatedLeaveAndprovidedByAnEmployerForUseDuringAnAbsenceFromEmploymentprovidedForAReasonDescribedInAnyParagraphOfSection2(A)IAndcalculatedBasedOnEmployee'SRequiredCompensationUnderSubparagraph(B)AndNumberOfHoursEmployeeWouldOrwiseBeNormallyScheduledToWork(OrNumberOfHoursCalculatedUnderSubparagraph(C))NotExceed$511PerDayForAUseDescribedInParagraph(1),(2),Or(3)OfSection5102(A)NotExceed$5,110InAggregateForAUseDescribedInParagraph(1),(2),Or(3)OfSection5102(A)NotExceed$200PerDayForAUseDescribedInParagraph(4),(5),Or(6)OfSection5102(A)NotExceed$2,000InAggregateForAUseDescribedInParagraph(4),(5),Or(6)OfSection5102(A)"/>
   <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 29.1</rdfs:comment>
@@ -547,13 +535,13 @@ From statement: 30.3</rdfs:comment>
 <owl:ObjectProperty rdf:about="#shall_be''''''''''''">
   <rdfs:domain rdf:resource="#Employee'SRequiredCompensationAndsubjectToSubparagraph(A)(Ii),WithRespectToAnyPaidSickTimeProvidedForAnyUseDescribedInParagraph(4),(5),Or(6)OfSection5102(A)UnderThisSubparagraph"/>
   <rdfs:range rdf:resource="#TwoThirdsOfAmountDescribedInClause(B)(I)"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: </rdfs:comment>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 31.1</rdfs:comment>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#shall_have">
   <rdfs:domain rdf:resource="#SecretaryOfLabor"/>
-  <rdfs:range rdf:resource="#AuthorityToIssueRegulationsAnd34.2,34.3,34.4,34.7,34.8,34.9"/>
-  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 34.1</rdfs:comment>
+  <rdfs:range rdf:resource="#AuthorityToIssueRegulations"/>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">From statement: 35.1</rdfs:comment>
 </owl:ObjectProperty>
 
 <owl:Class rdf:about="#Employee">
@@ -980,10 +968,6 @@ From statement: 30.3</rdfs:comment>
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
-<owl:Class rdf:about="#And22.2,22.3,22.4,22.5,22.6,22.7,22.8,22.9,22.10,22.11,22.12,22.13">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-</owl:Class>
-
 <owl:Class rdf:about="#Successor">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
@@ -1140,10 +1124,6 @@ From statement: 30.3</rdfs:comment>
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
-<owl:Class rdf:about="#AuthorityToIssueRegulationsAnd34.2,34.3,34.4,34.7,34.8,34.9">
-  <rdfs:subClassOf rdf:resource="#AuthorityToIssueRegulations"/>
-</owl:Class>
-
 <owl:Class rdf:about="#HealthCareProvider">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
@@ -1262,10 +1242,6 @@ From statement: 30.3</rdfs:comment>
 
 <owl:Class rdf:about="#EmergencyRespondersCertain">
   <rdfs:subClassOf rdf:resource="#EmergencyResponders"/>
-</owl:Class>
-
-<owl:Class rdf:about="#And34.5,34.6">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
 <owl:Class rdf:about="#SmallBusinesses">
